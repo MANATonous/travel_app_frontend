@@ -10,7 +10,7 @@ class Register extends Component {
     constructor(props){
       super(props)
       this.state = {
-        apiURL: env.REACT_APP_API_URL,
+        apiURL: env.API_URL,
         errors: '',
         // state gets updated from handleChange, and sent to server with newUserSubmit
         form: {

@@ -17,7 +17,7 @@ class Login extends Component {
     this.state = {
       email: '',
       password: '',
-      apiUrl: env.REACT_APP_API_URL,
+      apiUrl: env.API_URL,
       modal: false,
     }
     this.toggle = this.toggle.bind(this);
