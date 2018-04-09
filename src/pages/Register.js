@@ -54,6 +54,7 @@ handleChange(e){
 }
 
 newUserSubmit(event){
+  console.log(this.state.apiURL);
   //when a submission happens we are NOT sending a url with parameters, opting to send json state object instead
   event.preventDefault()
   //set newUser to state
