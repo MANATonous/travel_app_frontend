@@ -10,9 +10,10 @@ import { Col, Form, FormGroup, Label, Input, Row, Modal, ModalHeader, ModalBody,
 import UpdateTrip from './UpdateTrip';
 import AuthService from '../services/AuthService';
 import '../css/Trip.css';
+import runtimeEnv from '@mars/heroku-js-runtime-env';
 
-
-const apiURL = 'http://localhost:3000'
+const env = runtimeEnv()
+const apiURL = env.REACT_APP_API_URL
 
 class Trip extends Component {
   constructor(props) {

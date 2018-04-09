@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { FormGroup, Input } from 'reactstrap'
 import '../css/Register.css';
+import runtimeEnv from '@mars/heroku-js-runtime-env';
+
+const env = runtimeEnv()
 
 
 class Register extends Component {
     constructor(props){
       super(props)
       this.state = {
-        apiURL: 'http://localhost:3000',
+        apiURL: env.REACT_APP_API_URL,
         errors: '',
         // state gets updated from handleChange, and sent to server with newUserSubmit
         form: {

@@ -1,7 +1,11 @@
 import decode from 'jwt-decode';
-export default class AuthService {
+import runtimeEnv from '@mars/heroku-js-runtime-env';
+
+const env = runtimeEnv()
+
+export default class AuthService {  
     constructor(domain) {
-        this.domain = domain || 'http://localhost:3000' // We can pass in the backend server, or use a default for dev
+        this.domain = domain || env.REACT_APP_API_URL // We can pass in the backend server, or use a default for dev
         this.fetch = this.fetch.bind(this)
         this.login = this.login.bind(this)
         this.getUserId = this.getUserId.bind(this)

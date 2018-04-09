@@ -5,8 +5,10 @@ import {ListGroup, ListGroupItem, Badge, Col, Form} from 'reactstrap';
 import { Scrollbars } from 'react-custom-scrollbars';
 import '../css/MessageBoard.css';
 import AuthService from '../services/AuthService'
+import runtimeEnv from '@mars/heroku-js-runtime-env';
 
 const Auth = new AuthService()
+const env = runtimeEnv()
 
 
 class MessageBoard extends Component {
@@ -14,7 +16,7 @@ class MessageBoard extends Component {
   constructor(props){
     super(props)
     this.state = {
-      apiUrl: "http://localhost:3000",
+      apiUrl: env.REACT_APP_API_URL,
       chats: [],
       avatar: '',
       error: '',

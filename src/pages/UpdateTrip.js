@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import {Row, Col, Form, Modal, ModalBody, ModalHeader, Collapse, ModalFooter, Button, FormGroup, Label, Input,Navbar, NavbarBrand, NavbarToggler, Nav, NavItem, NavLink} from 'reactstrap';
 import AuthService from '../services/AuthService'
 import '../css/Trip.css';
+import runtimeEnv from '@mars/heroku-js-runtime-env';
+
+const env = runtimeEnv()
 
 
 class UpdateTrip extends Component {
@@ -10,7 +13,7 @@ class UpdateTrip extends Component {
     this.Auth = new AuthService()
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
-      apiURL: 'http://localhost:3000',
+      apiURL: env.REACT_APP_API_URL,
       errors: '',
       form: {
         title: '',

@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import runtimeEnv from '@mars/heroku-js-runtime-env';
+
+const env = runtimeEnv()
 
 class TicketmasterAPI extends Component {
   constructor(props){
     super(props)
     this.state = {
-      external_api_url: "http://app.ticketmaster.com/discovery/v2/events.json?city=",
-      external_api_key: "&apikey=WwUmoqZet3yeAma97s5JpgGXV8n6R8qO",
+      external_api_url: env.REACT_APP_EXTERNAL_API_URL,
+      external_api_key: env.REACT_APP_EXTERNAL_API_KEY,
       trip_city: '',
       suggested_event: ''
       }

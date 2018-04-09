@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import runtimeEnv from '@mars/heroku-js-runtime-env';
 import '../css/Dashboard.css';
 import { CardDeck, Navbar, NavbarBrand, Nav, Modal, ModalBody, ModalHeader, Button, ModalFooter, DropdownToggle, Dropdown, DropdownItem,Collapse, DropdownMenu, NavbarToggler, NavItem, NavLink, jumbotron, dropdown, menu } from 'reactstrap';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
@@ -10,13 +11,14 @@ import AuthService from '../services/AuthService';
 import withAuth from '../services/withAuth';
 
 const Auth = new AuthService()
+const env = runtimeEnv()
 
 class Dashboard extends Component {
   constructor(props){
     super(props)
     this.auth = new AuthService()
     this.state = {
-      apiUrl: "http://localhost:3000",
+      apiUrl: env.REACT_APP_API_URL,
       user_trips: [],
       joined_trips: [],
       collapsed: true,

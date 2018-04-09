@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Col, FormGroup, Label, Input } from 'reactstrap';
 import AuthService from '../services/AuthService'
 import '../css/NewTrip.css';
+import runtimeEnv from '@mars/heroku-js-runtime-env';
+
+const env = runtimeEnv()
 
 class NewTrip extends Component {
   constructor(props) {
@@ -9,7 +12,7 @@ class NewTrip extends Component {
     this.Auth = new AuthService()
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
-      apiURL: 'http://localhost:3000',
+      apiURL: env.REACT_APP_API_URL,
       errors: '',
       form: {
         title: '',

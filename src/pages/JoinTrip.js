@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import {Row, Col, Form, FormGroup, Label, Button, Input} from 'reactstrap';
 import AuthService from '../services/AuthService';
 import '../css/JoinTrip.css';
+import runtimeEnv from '@mars/heroku-js-runtime-env';
+
+const env = runtimeEnv()
 
 class JoinTrip extends Component {
   constructor(props){
     super(props)
     this.Auth = new AuthService()
     this.state = {
-      apiUrl: 'http://localhost:3000',
+      apiUrl: env.REACT_APP_API_URL,
       info: {
         code: '',
         user_id: ''

@@ -4,13 +4,16 @@ import {Table} from 'reactstrap';
 import {Button} from 'react-bootstrap';
 import '../css/Trip.css';
 import AuthService from '../services/AuthService';
+import runtimeEnv from '@mars/heroku-js-runtime-env';
+
+const env = runtimeEnv()
 
 class Itinerary extends Component {
   constructor(props){
     super(props)
     this.Auth = new AuthService()
     this.state = {
-      apiUrl: 'http://localhost:3000',
+      apiUrl: env.REACT_APP_API_URL,
       events: []
     }
     this.handleDelete = this.handleDelete.bind(this)

@@ -5,6 +5,9 @@ import { Button, Col, Form, FormGroup, Label,Input, Row, Modal, ModalHeader, Mod
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import '../css/Login.css';
 import '../css/Register.css';
+import runtimeEnv from '@mars/heroku-js-runtime-env';
+
+const env = runtimeEnv()
 
 
 class Login extends Component {
@@ -14,7 +17,7 @@ class Login extends Component {
     this.state = {
       email: '',
       password: '',
-      apiUrl: 'http://localhost:3000',
+      apiUrl: env.REACT_APP_API_URL,
       modal: false,
     }
     this.toggle = this.toggle.bind(this);

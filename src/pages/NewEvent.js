@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import {Row, Col, Form} from 'react-bootstrap';
 import AuthService from '../services/AuthService';
 import '../css/NewEvent.css';
+import runtimeEnv from '@mars/heroku-js-runtime-env';
+
+const env = runtimeEnv()
 
 class NewEvent extends Component {
   constructor(props) {
     super(props)
     this.Auth = new AuthService()
     this.state = {
-      apiURL: 'http://localhost:3000',
+      apiURL: env.REACT_APP_API_URL,
       errors: '',
       trip_id: '',
       form: {
