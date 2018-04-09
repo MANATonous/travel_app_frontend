@@ -1,0 +1,11 @@
+.join-trip-button {
+  background-color: #88AE9F;
+  border: none;
+  transition: 1s opacity ease;
+  cursor: pointer;
+}
+
+.join-trip-button:hover {
+  opacity: 0.8;
+  outline:none;
+}

@@ -1,0 +1,72 @@
+
+/* container */
+
+.message-board{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 90%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+
+/* header */
+
+.message-header {
+  background-color: #FFF9F7;
+  width:100%;
+  margin: 20px auto !important;
+  border-radius: 5px;
+  padding: 20px;
+  height: 10%;
+  font-size: 3rem;
+}
+
+
+/* messages and scrollbar*/
+
+.list-group-item {
+  background-color: Rgba(251, 254, 249,0.6);
+}
+
+#message-display-name{
+  background-color: #698DA0;
+  border: none;
+  color: white;
+}
+
+
+.message-box {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background-color: #FCF4F2;
+}
+
+
+/* edits for message textarea and button */
+
+.submits {
+  margin: 0 auto;
+}
+
+form#message-submit {
+  margin: 0 auto !important;
+  align-content: center;
+  align-self: flex-end;
+}
+
+#newsuggestion {
+  min-width: 300px;
+  margin-top: 20px;
+}
+
+#newsuggestion2 {
+  width: 300px;
+  margin-bottom: 20px;
+  background-color: #88AE9F;
+  border: none;
+}

@@ -1,0 +1,17 @@
+#form {
+  margin: 0 0 0 0 !important;
+  align-items: center;
+}
+
+.FormGroup {
+  align-items: left;
+}
+
+text-area {
+  min-width: 50%;
+  align-items: center;
+}
+
+.new-trip-btn {
+  background-color: #88AE9F;
+}

@@ -1,0 +1,38 @@
+
+
+
+.nav-tabs .dropdown-menu {
+  margin-top: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0.4rem;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #78C2AD;
+}
+.nav-fill .nav-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  text-align: center;
+}
+
+.navbarBrand {
+  position: relative;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-size: 100px;
+  background-color: #78C2AD;
+}
+
+.NavbarToggler {
+  font-style: italic;
+  color: #fff;
+  background-color: #78C2AD;
+}
