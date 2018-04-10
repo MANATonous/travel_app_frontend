@@ -3,7 +3,7 @@ import { FormGroup, Input } from 'reactstrap'
 import '../css/Register.css';
 import runtimeEnv from '@mars/heroku-js-runtime-env';
 
-const url = env.REACT_APP_API_URL
+// const url = env.REACT_APP_API_URL
 
 
 class Register extends Component {
