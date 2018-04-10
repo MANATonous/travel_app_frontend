@@ -48,7 +48,7 @@ form {
 .loginform > form {
   display: flex;
   flex-direction: column;
-  justify-content: center
+  justify-content: center;
 }
 
 .form-item{
@@ -306,6 +306,25 @@ div.info-text {
   }
   .modal-sm {
     max-width: 300px;
+  }
+
+}
+
+@media (min-width: 350px) {
+
+  .admin-page-background {
+    grid-template-rows: [row1-start] 5% [row1-end] auto [third-line] auto [last-line];
+    height: 120vh;
+  }
+
+  .loginform {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    margin: 0 auto;
+  }
+
+  .loginform > form {
+    margin-top: 20px;
   }
 
 }
