@@ -5,6 +5,7 @@
   "dependencies": {
     "@mars/heroku-js-runtime-env": "^3.0.2",
     "jwt-decode": "^2.2.0",
+    "npm": "^5.8.0",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
     "react-custom-scrollbars": "^4.2.1",
