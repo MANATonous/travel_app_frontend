@@ -4,6 +4,7 @@ import '../css/Register.css';
 import runtimeEnv from '@mars/heroku-js-runtime-env';
 
 const env = runtimeEnv()
+const url = env.REACT_APP_API_URL
 
 
 class Register extends Component {
@@ -55,6 +56,7 @@ handleChange(e){
 
 newUserSubmit(event){
   console.log(this.state.apiURL);
+  console.log(url);
   //when a submission happens we are NOT sending a url with parameters, opting to send json state object instead
   event.preventDefault()
   //set newUser to state
