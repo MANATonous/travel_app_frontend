@@ -3,15 +3,17 @@ import { FormGroup, Input } from 'reactstrap'
 import '../css/Register.css';
 import runtimeEnv from '@mars/heroku-js-runtime-env';
 
-const env = runtimeEnv()
+
+const env = runtimeEnv();
+
 
 
 class Register extends Component {
     constructor(props){
       super(props)
       this.state = {
-        apiURL: env.REACT_APP_API_URL,
         errors: '',
+        apiUrl: env.REACT_APP_API_URL,
         // state gets updated from handleChange, and sent to server with newUserSubmit
         form: {
           first_name: '',
@@ -59,7 +61,7 @@ newUserSubmit(event){
   //set newUser to state
   const newUser = this.state.form
   //send json version of newUser to backend api with post method
-  fetch(`${this.state.apiURL}/users`,
+  fetch(`${this.state.apiUrl}/users`,
     {
       body: JSON.stringify(newUser),
       headers: {
@@ -81,6 +83,7 @@ newUserSubmit(event){
     }})
 }
     render() {
+
       return (
       <div>
       <form className="register_form">

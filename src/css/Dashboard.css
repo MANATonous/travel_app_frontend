@@ -166,3 +166,24 @@ a.hover {
   }
 
 }
+
+@media (max-width: 375px) {
+  .dashboard-card {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  #dash-header-title {
+    font-size: 50px;
+    color: white;
+  }
+
+  #dash-header-subtitle {
+    font-size: 25px;
+    color: white;
+  }
+
+  #dash-header {
+    height: 100vh;
+  }
+}
