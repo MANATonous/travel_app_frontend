@@ -43,7 +43,6 @@ class UpdateTrip extends Component {
     })
     .then((res) =>{
       const form = res[0]
-      console.log(form.city);
       this.setState({
         form: {
           title: form.title,

@@ -5,7 +5,6 @@ import runtimeEnv from '@mars/heroku-js-runtime-env';
 
 
 const env = runtimeEnv();
-console.log(env);
 
 
 
@@ -57,7 +56,6 @@ handleChange(e){
 }
 
 newUserSubmit(event){
-  // console.log(this.state.apiURL);
   //when a submission happens we are NOT sending a url with parameters, opting to send json state object instead
   event.preventDefault()
   //set newUser to state
