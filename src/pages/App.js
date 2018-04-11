@@ -4,9 +4,7 @@ import Dashboard from './Dashboard';
 import Trip from './Trip';
 import Login from './Login';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import AuthService from '../services/AuthService'
 
-const Auth = new AuthService()
 
 class App extends Component {
   render() {

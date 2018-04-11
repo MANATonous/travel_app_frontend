@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Row, Col, Form, Modal, ModalBody, ModalHeader, Collapse, ModalFooter, Button, FormGroup, Label, Input,Navbar, NavbarBrand, NavbarToggler, Nav, NavItem, NavLink} from 'reactstrap';
+import { Col, FormGroup, Label, Input} from 'reactstrap';
 import AuthService from '../services/AuthService'
 import '../css/Trip.css';
 import runtimeEnv from '@mars/heroku-js-runtime-env';
@@ -190,7 +190,6 @@ class UpdateTrip extends Component {
           >
             Submit
           </button>
-
         </form>
       </div>
     );

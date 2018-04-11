@@ -3,10 +3,10 @@ import MessageBoard from './MessageBoard';
 import Itinerary from './Itinerary';
 import NewEvent from './NewEvent'
 import withAuth from '../services/withAuth'
-import { Button, Jumbotron } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import Navigation from './Navigation';
 import TicketmasterAPI from './TicketmasterAPI';
-import { Col, Form, FormGroup, Label, Input, Row, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
+import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 import UpdateTrip from './UpdateTrip';
 import AuthService from '../services/AuthService';
 import '../css/Trip.css';
@@ -63,7 +63,7 @@ class Trip extends Component {
   }
 
   renderAPI(){
-    if (this.state.trip.city != undefined) {
+    if (this.state.trip.city !== undefined) {
       localStorage.setItem("city", this.state.trip.city)
       return (
           <TicketmasterAPI />
@@ -73,7 +73,7 @@ class Trip extends Component {
   }
 
   renderEditButton(){
-    if (this.state.trip.user_id == this.Auth.getUserId()) {
+    if (this.state.trip.user_id === this.Auth.getUserId()) {
       return (
         <div id="outer-submit">
           <Button type="button" id="edit-button" onClick={this.toggleModalEdit} > </Button>
