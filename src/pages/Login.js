@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import AuthService from '../services/AuthService';
 import Register from './Register'
-import { Button, Col, Form, FormGroup, Label,Input, Row, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Button, Col, FormGroup, Label,Input, Modal, ModalHeader, ModalBody} from 'reactstrap'
 import '../css/Login.css';
 import '../css/Register.css';
 import runtimeEnv from '@mars/heroku-js-runtime-env';

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import runtimeEnv from '@mars/heroku-js-runtime-env';
 import '../css/Dashboard.css';
-import { CardDeck, Navbar, NavbarBrand, Nav, Modal, ModalBody, ModalHeader, Button, ModalFooter, DropdownToggle, Dropdown, DropdownItem,Collapse, DropdownMenu, NavbarToggler, NavItem, NavLink, jumbotron, dropdown, menu } from 'reactstrap';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { CardDeck, Modal, ModalBody, ModalHeader } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import '../css/AuthUserNavFooter.css';
 import NewTrip from './NewTrip';
 import JoinTrip from './JoinTrip';
@@ -10,7 +10,6 @@ import Navigation from './Navigation';
 import AuthService from '../services/AuthService';
 import withAuth from '../services/withAuth';
 
-const Auth = new AuthService()
 const env = runtimeEnv()
 
 class Dashboard extends Component {
@@ -65,7 +64,7 @@ class Dashboard extends Component {
       const ownedTrips = []
       const joinedTrips = []
       parsedResponse.map((trip) => {
-        if (trip.user_id == userID) {
+        if (trip.user_id === userID) {
           ownedTrips.push(trip);
         } else {
           joinedTrips.push(trip)

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NewEvent from './NewEvent';
 import {Table} from 'reactstrap';
 import {Button} from 'react-bootstrap';
 import '../css/Trip.css';
@@ -63,7 +62,7 @@ class Itinerary extends Component {
           </thead>
           <tbody>
           {this.state.events.map((events, index) =>{
-            if (this.Auth.getUserId() == this.props.tripOwner) {
+            if (this.Auth.getUserId() === this.props.tripOwner) {
               return(
                 <tr key={index}>
                   <td>{events.title}</td>

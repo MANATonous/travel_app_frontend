@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import AuthService from '../services/AuthService'
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+
 
 export default function withAuth(WrappedComponent) {
   const Auth = new AuthService()
@@ -14,7 +14,7 @@ export default function withAuth(WrappedComponent) {
 
     componentWillMount() {
       if (!Auth.loggedIn()) {
-        this.props.history.replace('/login')
+        this.props.history.replace('/Login')
       }
       else {
         try {
@@ -25,7 +25,7 @@ export default function withAuth(WrappedComponent) {
         }
         catch(err){
           Auth.logout()
-          this.props.history.replace('/login')
+          this.props.history.replace('/Login')
         }
       }
     }
