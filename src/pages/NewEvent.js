@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Row, Col, Form} from 'react-bootstrap';
+import {Row, Col, FormGroup, Input, Label} from 'reactstrap';
 import AuthService from '../services/AuthService';
 import '../css/NewEvent.css';
 import runtimeEnv from '@mars/heroku-js-runtime-env';
@@ -67,11 +67,14 @@ class NewEvent extends Component {
 
   render(){
     return(
-      <Form className="form" onSubmit={this.newEventSubmit.bind(this)}>
+      <form
+        id="form"
+        className="form-submit"
+        onSubmit={this.newEventSubmit.bind(this)}>
 
-        <Row>
-          <div className="form-group">
-            <input
+        <FormGroup row>
+          <Col>
+            <Input
               className="form-control title"
               type="text"
               placeholder="Title"
@@ -80,13 +83,12 @@ class NewEvent extends Component {
               onChange={this.handleChange.bind(this)}
               id="inputLarge"
             />
-          </div>
-        </Row>
+          </Col>
+        </FormGroup>
 
-        <Row>
+        <FormGroup row>
           <Col>
-            <div className="form-group">
-              <input
+            <Input
                 className="form-control"
                 type="text"
                 placeholder="Location"
@@ -95,63 +97,60 @@ class NewEvent extends Component {
                 onChange={this.handleChange.bind(this)}
                 id="inputLarge"
               />
-            </div>
           </Col>
-          <Col>
-            <div className="form-group">
-              <label hidden className="col-form-label col-form-label-lg country">Date & Time</label>
+        </FormGroup>
+
+        <FormGroup row>
+        <Label for="start_date" sm={4}>Start Date</Label>
+        <Col sm={8}>
               <input
                 className="form-control"
                 type="datetime-local"
-                placeholder="Date & Time"
                 name="date"
                 value={this.state.form.date}
                 onChange={this.handleChange.bind(this)}
                 id="inputLarge"
               />
-            </div>
           </Col>
-        </Row>
+        </FormGroup>
+
+        <FormGroup row>
+          <Col>
+          <Input
+            type="textarea"
+            id="exampleTextarea"
+            rows="5"
+            placeholder="Add a description of your proposed activity..."
+            name="description"
+            value={this.state.form.description}
+            onChange={this.handleChange.bind(this)}/>
+          </Col>
+        </FormGroup>
+
+        <FormGroup row>
+          <Col>
+          <Input
+            type="textarea"
+            id="exampleTextarea"
+            rows="3"
+            placeholder="Add links that pertain to your event here..."
+            name="link"
+            value={this.state.form.link}
+            onChange={this.handleChange.bind(this)}/>
+          </Col>
+        </FormGroup>
 
         <Row>
-          <div className="form-group text-area">
-            <label className="description">Description</label>
-            <textarea
-              className="form-control"
-              id="exampleTextarea"
-              rows="5"
-              placeholder="Add a description of your proposed activity..."
-              name="description"
-              value={this.state.form.description}
-              onChange={this.handleChange.bind(this)}>
-            </textarea>
-          </div>
+        <button
+          type="button"
+          input type="submit"
+          value='Submit'
+          className="btn btn-lg btn-block form-submit new-event-btn">
+              Submit
+        </button>
         </Row>
 
-        <Row>
-          <div className="form-group text-area">
-            <label className="link">Links</label>
-            <textarea
-              className="form-control"
-              id="exampleTextarea"
-              rows="3"
-              placeholder="Add links that pertain to your event here..."
-              name="link"
-              value={this.state.form.link}
-              onChange={this.handleChange.bind(this)}>
-            </textarea>
-          </div>
-        </Row>
-
-        <Row>
-          <input
-            type="submit"
-            className="btn btn-primary submit"
-            value="Submit"
-          />
-        </Row>
-
-      </Form>
+      </form>
     )
   }
 }

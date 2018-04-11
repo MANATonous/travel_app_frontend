@@ -126,20 +126,21 @@ class Trip extends Component {
 
 
             <div className="itinerary-row">
+
+            <Itinerary tripOwner={this.state.trip.user_id}/>
+
             <div className="toggle-form"    id="toggle-form">
-              <Button type="button" className="btn btn-primary btn-lg new-event-btn" onClick={this.toggleNewEvent.bind(this)}>
+              <Button type="button" className="form-submit btn btn-lg new-event-btn" onClick={this.toggleNewEvent.bind(this)}>
                  Add New Event
               </Button>
               <Modal isOpen={this.state.modal_new_event} toggle={this.toggleNewEvent}>
                 <ModalHeader toggle={this.toggleNewEvent}>Add New Event</ModalHeader>
                 <ModalBody id="toggleNewEvent">
-                  < NewEvent toggleNewEvent={this.toggleNewEvent} />
+                  <NewEvent toggleNewEvent={this.toggleNewEvent} />
                 </ModalBody>
               </Modal>
             </div>
-            <Itinerary tripOwner={this.state.trip.user_id}/>
             </div>
-
           </div>
           </div>
       )

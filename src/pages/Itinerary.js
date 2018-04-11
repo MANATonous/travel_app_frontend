@@ -3,6 +3,7 @@ import NewEvent from './NewEvent';
 import {Table} from 'reactstrap';
 import {Button} from 'react-bootstrap';
 import { Scrollbars } from 'react-custom-scrollbars';
+import Collapsible from './Collapsible.js'
 import '../css/Trip.css';
 import AuthService from '../services/AuthService';
 import runtimeEnv from '@mars/heroku-js-runtime-env';
@@ -51,48 +52,31 @@ class Itinerary extends Component {
 
   render(){
     return(
-      <div>
-      <Scrollbars className="message-box"
-        style={{ height: 600 }}
-        >
-          <Table responsive hover>
-            <thead>
-              <tr>
-                <th>Event Name</th>
-                <th>Date</th>
-                <th>Location</th>
-                <th>Description</th>
-                <th>Link</th>
-              </tr>
-            </thead>
-            <tbody>
-            {this.state.events.map((events, index) =>{
-              if (this.Auth.getUserId() == this.props.tripOwner) {
-                return(
-                  <tr key={index}>
-                    <td>{events.title}</td>
-                    <td>{events.date}</td>
-                    <td>{events.location}</td>
-                    <td>{events.description}</td>
-                    <td>{events.link}</td>
-                    <td><Button type="button" className="btn btn-lg delete-button" value={index} onClick={this.handleDelete}> X </Button></td>
-                  </tr>
-                )
-              } else {
-                return(
-                  <tr key={index}>
-                    <td>{events.title}</td>
-                    <td>{events.date}</td>
-                    <td>{events.location}</td>
-                    <td>{events.description}</td>
-                    <td>{events.link}</td>
-                  </tr>
-                )
-              }
-            })}
-            </tbody>
-          </Table>
-        </Scrollbars>
+      <div className="itinerary-card">
+        <h2 className="events-header">Itinerary Ideas</h2>
+        <hr/>
+        {this.state.events.map((events, index) =>{
+          if (this.Auth.getUserId() == this.props.tripOwner) {
+            return(
+              <Collapsible trigger={events.title} className="collapse-header">
+              <Button type="button" className="btn btn-sm delete-button" value={index} onClick={this.handleDelete}> Delete Event </Button>
+                <h5 className="event-location">{events.location}</h5>
+                <h6 className="event-date">{events.date}</h6>
+                <p className="event-description">{events.description}</p>
+                <h6 className="event-link">{events.link}</h6>
+              </Collapsible>
+            )
+          } else {
+            return(
+              <Collapsible trigger={events.title} className="collapse-header">
+                <h5>{events.location}</h5>
+                <h6>{events.date}</h6>
+                <p>{events.description}</p>
+                <h6>{events.link}</h6>
+              </Collapsible>
+            )
+          }
+        })}
       </div>
     )
   }
