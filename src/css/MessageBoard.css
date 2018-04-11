@@ -70,3 +70,17 @@ form#message-submit {
   background-color: #88AE9F;
   border: none;
 }
+
+/* media queries */
+
+@media (max-width: 400px) {
+  #newsuggestion {
+    min-width: 250px;
+  }
+
+  #newsuggestion2 {
+    width: 200px;
+    justify-content: center;
+    align-self: center;
+  }
+}

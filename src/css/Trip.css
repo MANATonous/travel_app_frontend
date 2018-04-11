@@ -1,4 +1,4 @@
-/* entire container */
+/* ========= ENTIRE CONTAINER ======== */
 
 .wrapper {
   display:grid;
@@ -11,7 +11,10 @@
 }
 
 
-/* trip card container */
+
+
+/* ========= TRIP CONTAINER ======== */
+
 .tripinfo {
   grid-column: 1/2;
   grid-row: 1;
@@ -20,7 +23,10 @@
   border-radius: 10px;
 }
 
-/* trip header */
+
+
+/* ========= TRIP CARD HEADER ======== */
+
 .trip-header {
   display: flex;
   flex-wrap: wrap;
@@ -31,7 +37,10 @@
   font-size: 3rem;
 }
 
-/* edit button image */
+
+
+/* ========= EDIT BUTTON IMAGE ======== */
+
 #outer-submit {
   background: url('../edit-button-sm.png') no-repeat top right;
   width:50px;
@@ -48,20 +57,19 @@
   margin: 20px;
 }
 
-img.trip-photo {
-  max-width: 90%;
-  margin: 20px auto;
-  border-radius: 10px;
-  display: block;
-}
 
-/* update button within edit modal */
+
+
+/* ========= MODAL UPDATE BUTTON ======== */
 
 .update-button {
   background-color: #88AE9F;
 }
 
-/* alignment for sections within trip details card */
+
+
+
+/* ========= STYLES WITHIN TRIP DETAILS CARD ======== */
 
 #api, .secondary-header, .trip-header, .trip-details {
   background-color: #FFF9F7;
@@ -71,8 +79,17 @@ img.trip-photo {
   padding: 20px;
 }
 
+img.trip-photo {
+  max-width: 90%;
+  margin: 20px auto;
+  border-radius: 10px;
+  display: block;
+}
 
-/* message board card related to entire page; actual message edits in message.css file */
+
+
+
+/* ========= MESSAGE BOARD CONTAINER RELATED TO PAGE; ADDITIONAL EDITS IN MESSAGEBOARD.CSS ======== */
 
 .MessageBoard {
   grid-column: 2/3;
@@ -80,10 +97,10 @@ img.trip-photo {
   background-color: rgba(255,255,255,0.7);
   margin: 5%;
   border-radius: 10px;
-
 }
 
-/* event card edits */
+
+/* ========= EVENT CONTAINER ======== */
 
 .itinerary-row {
   grid-column: 1/3;
@@ -100,16 +117,85 @@ img.trip-photo {
   background-color: #698DA0;
   border-color: #698DA0;
   min-width: 200px;
+  transition: 1s opacity ease;
+  cursor: pointer;
+  outline:none;
 }
 
-.delete-button{
-  border-radius: 50px;
-  background-color: #698DA0
+.new-event-btn:hover {
+  opacity: 0.8;
+  outline:none;
 }
 
 
 
-/* tablet size */
+/* ========= EVENTS TOGGLE ======== */
+
+.events-header {
+  text-align: center;
+  margin-top: 15px;
+}
+
+
+.Collapsible__trigger {
+  font-size: 2em;
+  padding: 5px;
+  padding-left: 10px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.collapse-header {
+  width: 90%;
+  border: 1px solid lightgray;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+
+.Collapsible__contentInner {
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  background-color: #FFF9F7;
+  border-radius: 10px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.delete-button {
+  background-color: #698DA0;
+  justify-content: flex-end;
+  order: 2;
+  margin-bottom: 10px;
+}
+
+.event-location {
+  width: 80%;
+  font-size: 1.5rem;
+  order: 1;
+  justify-content: flex-start;
+}
+
+.event-date {
+  order: 3;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.event-description {
+  order: 4;
+  width: 100%;
+}
+
+.event-link {
+  order: 5;
+}
+
+
+
+/* ========= TABLET SIZE ======== */
 
 @media (max-width: 900px ){
 
@@ -132,5 +218,9 @@ img.trip-photo {
 
   .itinerary-row {
     grid-row: 3/4;
+  }
+
+  .collapse-header {
+    text-align: center;
   }
 }
