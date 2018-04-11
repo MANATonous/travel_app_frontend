@@ -69,7 +69,6 @@ class NewEvent extends Component {
     return(
       <form
         id="form"
-        className="form-submit"
         onSubmit={this.newEventSubmit.bind(this)}>
 
         <FormGroup row>
