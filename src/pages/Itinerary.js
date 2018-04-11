@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NewEvent from './NewEvent';
 import {Table} from 'reactstrap';
 import {Button} from 'react-bootstrap';
 import { Scrollbars } from 'react-custom-scrollbars';
@@ -52,9 +51,8 @@ class Itinerary extends Component {
   render(){
     return(
       <div>
-      <Scrollbars className="message-box"
-        style={{ height: 600 }}
-        >
+        <Scrollbars className="message-box"
+         style={{ height: 600 }}>
           <Table responsive hover>
             <thead>
               <tr>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../css/Navigation.css';
-import {Navbar, NavbarBrand, Nav, DropdownToggle, Dropdown, DropdownItem,Collapse, DropdownMenu, NavbarToggler, NavItem, NavLink,dropdown, menu } from 'reactstrap';
+import {Navbar, NavbarBrand, Nav, NavbarToggler, NavItem, NavLink, Collapse } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import AuthService from '../services/AuthService'
 
 const Auth = new AuthService();
@@ -16,7 +17,7 @@ class Navigation extends Component {
 
   handleLogout(){
     Auth.logout()
-    this.props.history.replace('/login')
+    this.props.history.replace('/Login')
   }
 
   toggleNavbar() {
@@ -28,15 +29,23 @@ class Navigation extends Component {
   render(){
     return(
       <Navbar color="faded" light>
-        <NavbarBrand href="/" className="mr-auto"><h3>{"Trippin' Out"}</h3></NavbarBrand>
+          <Link to="/">
+            <NavbarBrand className="mr-auto">
+              <h3>{"Trippin' Out"}</h3>
+            </NavbarBrand>
+          </Link>
         <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
         <Collapse isOpen={!this.state.collapsed} navbar>
           <Nav navbar align="right">
             <NavItem>
-              <NavLink href="/Dashboard">Dashboard</NavLink>
+              <Link to="/">
+                <NavLink>Dashboard</NavLink>
+              </Link>
             </NavItem>
             <NavItem>
-              <NavLink href="/Login" onClick={this.handleLogout.bind(this)} className="logout">Logout</NavLink>
+              <Link to="/Login" onClick={this.handleLogout.bind(this)} className="logout">
+                <NavLink>Logout</NavLink>
+              </Link>
             </NavItem>
           </Nav>
         </Collapse>

@@ -24,7 +24,7 @@ class TicketmasterAPI extends Component {
       return res.json()
     })
     .then((parsedResponse) =>{
-      if (parsedResponse._embedded != undefined) {
+      if (parsedResponse._embedded !== undefined) {
         const events = parsedResponse._embedded.events
         const sug_event = events[Math.floor(Math.random()*events.length)]
         this.setState({suggested_event: sug_event})
@@ -45,11 +45,11 @@ class TicketmasterAPI extends Component {
   }
 
     render() {
-      {this.state.suggested_event.name == undefined ? this.runAPI() : null}
+      {this.state.suggested_event.name === undefined ? this.runAPI() : null}
 
       return (
         <div>
-          {this.state.suggested_event.name != undefined ? this.renderAPI() : null}
+          {this.state.suggested_event.name !== undefined ? this.renderAPI() : null}
         </div>
       )
     }
