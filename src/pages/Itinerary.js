@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NewEvent from './NewEvent';
 import {Table} from 'reactstrap';
 import {Button} from 'react-bootstrap';
+import { Scrollbars } from 'react-custom-scrollbars';
 import '../css/Trip.css';
 import AuthService from '../services/AuthService';
 import runtimeEnv from '@mars/heroku-js-runtime-env';
@@ -51,43 +52,47 @@ class Itinerary extends Component {
   render(){
     return(
       <div>
-        <Table responsive hover>
-          <thead>
-            <tr>
-              <th>Event Name</th>
-              <th>Date</th>
-              <th>Location</th>
-              <th>Description</th>
-              <th>Link</th>
-            </tr>
-          </thead>
-          <tbody>
-          {this.state.events.map((events, index) =>{
-            if (this.Auth.getUserId() == this.props.tripOwner) {
-              return(
-                <tr key={index}>
-                  <td>{events.title}</td>
-                  <td>{events.date}</td>
-                  <td>{events.location}</td>
-                  <td>{events.description}</td>
-                  <td>{events.link}</td>
-                  <td><Button type="button" className="btn btn-lg delete-button" value={index} onClick={this.handleDelete}> X </Button></td>
-                </tr>
-              )
-            } else {
-              return(
-                <tr key={index}>
-                  <td>{events.title}</td>
-                  <td>{events.date}</td>
-                  <td>{events.location}</td>
-                  <td>{events.description}</td>
-                  <td>{events.link}</td>
-                </tr>
-              )
-            }
-          })}
-          </tbody>
-        </Table>
+      <Scrollbars className="message-box"
+        style={{ height: 600 }}
+        >
+          <Table responsive hover>
+            <thead>
+              <tr>
+                <th>Event Name</th>
+                <th>Date</th>
+                <th>Location</th>
+                <th>Description</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+            {this.state.events.map((events, index) =>{
+              if (this.Auth.getUserId() == this.props.tripOwner) {
+                return(
+                  <tr key={index}>
+                    <td>{events.title}</td>
+                    <td>{events.date}</td>
+                    <td>{events.location}</td>
+                    <td>{events.description}</td>
+                    <td>{events.link}</td>
+                    <td><Button type="button" className="btn btn-lg delete-button" value={index} onClick={this.handleDelete}> X </Button></td>
+                  </tr>
+                )
+              } else {
+                return(
+                  <tr key={index}>
+                    <td>{events.title}</td>
+                    <td>{events.date}</td>
+                    <td>{events.location}</td>
+                    <td>{events.description}</td>
+                    <td>{events.link}</td>
+                  </tr>
+                )
+              }
+            })}
+            </tbody>
+          </Table>
+        </Scrollbars>
       </div>
     )
   }
