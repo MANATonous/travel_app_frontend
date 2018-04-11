@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import ReactDOM from 'react-dom';
-import {ListGroup, ListGroupItem, Badge, Col, Form} from 'reactstrap';
+import {ListGroup, ListGroupItem, Col } from 'reactstrap';
 import { Scrollbars } from 'react-custom-scrollbars';
 import '../css/MessageBoard.css';
 import AuthService from '../services/AuthService'
