@@ -1,31 +1,33 @@
 #dash-header {
   background-image: url('../CityAtSunset.jpeg');
-  height: 80vh;
+  height: 90vh;
+  min-height: 550px;
   width: 100%;
   text-align: center;
   background-position: stretch;
   background-size: cover;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 #dash-header-text {
-  margin-top: 100px;
+  margin-top: 10%;
 }
 
 #dash-header-title {
-  font-size: 100px;
+  font-size: 6rem;
   color: white;
 }
 
 #dash-header-subtitle {
-  font-size: 40px;
+  font-size: 3rem;
   color: white;
 }
 
 .tripsImage {
   width: 98%;
-  margin: auto;
+  margin: 0 auto;
   padding: 2px;
+  flex-direction: flex-start;
 }
 #inputLarge {
   text-align: left;
@@ -86,13 +88,17 @@ a.hover {
 .card-deck{
   margin: 20px;
 }
-.label {
-  margin-left: 35px;
+
+.my-trip {
+  margin-top: 15px;
+
 }
 
-.jumbotron {
-  background-color: white;
+.label {
+  margin-left: 35px;
+  text-align: center;
 }
+
 
 .btn-block {
   width: 49%;
@@ -139,32 +145,39 @@ a.hover {
   text-decoration: none !important;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1100px) {
   .dashboard-card {
     max-width: 100%;
     margin: 0 auto;
   }
 
-  #dash-header {
+  #dash-header-title {
+    font-size: 5rem;
+  }
+
+  #dash-header-subtitle {
+    font-size: 3rem;
+  }
+
+  div #dash-header {
     height: 100vh;
   }
 }
 
-@media (max-width: 525px) {
+@media (max-width: 575px) {
   #button1, #button2 {
     width: 100%;
   }
 
   #dash-header-title {
-    font-size: 5rem;
+    font-size: 3rem;
     color: white;
   }
 
   #dash-header-subtitle {
-    font-size: 40px;
+    font-size: 2rem;
     color: white;
   }
-
 }
 
 @media (max-width: 375px) {
