@@ -89,7 +89,7 @@ class Dashboard extends Component {
     return(
       <div>
         <Navigation />
-        <div className= "jumbotron" id="dash-header">
+        <div className= "header" id="dash-header">
           <div id="dash-header-text">
             <h1 id="dash-header-title">{"Welcome to Trippin' Out!"}</h1>
             <p className= "lead" id="dash-header-subtitle"> Create and Manage Trips with Friends and Family </p>
@@ -106,14 +106,15 @@ class Dashboard extends Component {
 
           <button type="button" className="btn btn-lg btn-block"  id= "button2" onClick={this.toggleJoin}>Join A Trip</button>
           <Modal isOpen={this.state.modal_join} toggle={this.toggleJoin}>
-            <ModalHeader toggle={this.toggleJoin}>Enter Trip ID Here!</ModalHeader>
+            <ModalHeader toggle={this.toggleJoin}>Enter Trip ID Here</ModalHeader>
               <ModalBody>
                 < JoinTrip toggleJoinTrip={this.toggleJoin} />
               </ModalBody>
             </Modal>
         </div>
+
         <div>
-          <h3 className="label">My Trips</h3>
+          <h3 className="label my-trip">My Trips</h3>
           <hr className= "my-4 dashboard-line" />
         </div>
         <CardDeck className="card-deck">
