@@ -136,6 +136,7 @@ class Dashboard extends Component {
             )
           })}
         </CardDeck>
+        
 
         <div>
           <h3 className="label">{"Trips I'm Going On"}</h3>
