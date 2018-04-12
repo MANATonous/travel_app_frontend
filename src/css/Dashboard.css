@@ -1,6 +1,10 @@
+/* ====================================================
+                DASHBOARD HEADER
+==================================================== */
+
 #dash-header {
   background-image: url('../CityAtSunset.jpeg');
-  height: 90vh;
+  height: 80vh;
   min-height: 550px;
   width: 100%;
   text-align: center;
@@ -14,29 +18,79 @@
 }
 
 #dash-header-title {
-  font-size: 6rem;
-  color: white;
+  font-size: 5.5rem;
+  color: rgba(255,255,255,0.9);
 }
 
 #dash-header-subtitle {
   font-size: 3rem;
-  color: white;
+  color: rgba(255,255,255,0.8);
 }
 
-.tripsImage {
-  width: 98%;
-  margin: 0 auto;
-  padding: 2px;
-  flex-direction: flex-start;
+
+
+
+/* ====================================================
+                  MAIN PAGE STYLES
+==================================================== */
+
+.entire-dashboard {
+  background-color: #f3dbd1;
+  height: 100%;
 }
+
+
+
+
+
+/* ====================================================
+                  DASHBOARD BUTTONS
+==================================================== */
+
+.btn-block:hover {
+  opacity: 0.8;
+  outline: none;
+}
+
+.dashboard-btn {
+  margin-top: .5rem;
+  background-color: #88AE9F;
+  border: none;
+  transition: 1s opacity ease;
+  display: inline-block;
+  width: 40%;
+}
+
+#button1 {
+  margin-right: 5%;
+}
+
+#button2 {
+  margin-left: 5%;
+}
+
+
+
+
+
+/* ====================================================
+                  TRIP CARDS
+==================================================== */
+
+.label {
+  padding: 10px;
+  text-align: center;
+  background-color: rgba(255,255,255,0.7);
+  width: 90%;
+  border-radius: 10px;
+  margin: 20px auto;
+}
+
 #inputLarge {
   text-align: left;
   align-items: baseline;
+}
 
-}
-.entirePage {
-  background-color: #000;
-}
 .form {
   margin: 5px 0 0 0;
 }
@@ -48,6 +102,11 @@
   align-items: left;
 }
 
+.card-deck{
+  margin: 20px;
+  justify-content: space-around;
+}
+
 .card {
   margin: 10px;
   width: 30%;
@@ -56,14 +115,15 @@
   text-align: center;
   padding: 2px;
   border: 1px solid #698DA0;
+  background-color: rgba(255,255,255,0.7);
 }
+
 .card-header {
   font-size: 20px;
   text-align: center;
   padding: 10px;
   background-color: #698DA0;
   color: white !important;
-
 }
 
 .card-header:hover {
@@ -79,57 +139,24 @@ a.hover {
   text-align: center;
   padding: 5px;
 }
+
 .card-body {
   padding: 10px;
   margin: 5px;
   size: 1px;
-}
-
-.card-deck{
-  margin: 20px;
-}
-
-.my-trip {
-  margin-top: 15px;
 
 }
 
-.label {
-  margin-left: 35px;
-  text-align: center;
+.card-top {
+  min-height: 80px;
+  max-height: 80px;
 }
 
-
-.btn-block {
-  width: 49%;
-  align-items: center;
-}
-
-#button1 {
-  float: left;
-  margin-top: .5rem;
-  background-color: #88AE9F;
-  border: none;
-  transition: 1s opacity ease;
-  cursor: pointer;
-}
-
-#button1:hover {
-  opacity: 0.8;
-  outline:none;
-}
-
-#button2 {
-  float: right;
-  background-color: #88AE9F;
-  border: none;
-  transition: 1s opacity ease;
-  cursor: pointer;
-}
-
-#button2:hover {
-  opacity: 0.8;
-  outline:none;
+.tripsImage {
+  width: 98%;
+  margin: 0 auto;
+  padding: 2px;
+  flex-direction: flex-start;
 }
 
 .dashboard-line {
@@ -137,13 +164,22 @@ a.hover {
   margin-right: 35px;
 }
 
-.dashboard-card {
+div.card.dashboard-card {
   max-width: 30%;
+  margin-top: 20px;
 }
 
 .link {
   text-decoration: none !important;
 }
+
+
+
+
+
+/* ====================================================
+                MEDIA QUERIES
+====================================================*/
 
 @media (max-width: 1100px) {
   .dashboard-card {
@@ -152,7 +188,7 @@ a.hover {
   }
 
   #dash-header-title {
-    font-size: 5rem;
+    font-size: 4.5rem;
   }
 
   #dash-header-subtitle {
@@ -160,23 +196,22 @@ a.hover {
   }
 
   div #dash-header {
-    height: 100vh;
+    height: 80vh;
   }
 }
 
 @media (max-width: 575px) {
   #button1, #button2 {
-    width: 100%;
+    width: 90%;
+    margin: 10px auto;
   }
 
   #dash-header-title {
     font-size: 3rem;
-    color: white;
   }
 
   #dash-header-subtitle {
     font-size: 2rem;
-    color: white;
   }
 }
 
@@ -188,12 +223,10 @@ a.hover {
 
   #dash-header-title {
     font-size: 50px;
-    color: white;
   }
 
   #dash-header-subtitle {
     font-size: 25px;
-    color: white;
   }
 
   #dash-header {
