@@ -92,7 +92,7 @@ class Dashboard extends Component {
         <div className="entire-dashboard">
           <div className= "header" id="dash-header">
             <div id="dash-header-text">
-              <h1 id="dash-header-title">{"Welcome to Trippin' Out!"}</h1>
+              <h1 id="dash-header-title">{"Welcome to Trip & Share!"}</h1>
               <p className= "lead" id="dash-header-subtitle"> Create and Manage Trips with Friends and Family </p>
               <hr className= "my-4" />
             </div>

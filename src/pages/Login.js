@@ -46,7 +46,7 @@ class Login extends Component {
       <div className="admin-page-background">
         <div className="info-text">
           <div className="card-body">
-            <h2 className="login-h2">{"Welcome to Trippin' Out!"}</h2>
+            <h2 className="login-h2">{"Welcome to Trip & Share!"}</h2>
             <div className="text-description">
               <p className="card-text">{"If you've ever tried to plan a trip with multiple people, you know it can be difficult to keep all your ideas in one place. Our app makes it easy to organize all your thoughts and resources in one place."}</p>
               <br/>

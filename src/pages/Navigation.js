@@ -31,7 +31,7 @@ class Navigation extends Component {
       <Navbar color="faded" light>
           <Link to="/">
             <NavbarBrand className="mr-auto">
-              <h3>{"Trippin' Out"}</h3>
+              <h3>{"Trip & Share"}</h3>
             </NavbarBrand>
           </Link>
         <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
